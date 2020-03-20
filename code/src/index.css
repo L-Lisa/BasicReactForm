@@ -82,12 +82,12 @@ code {
   padding: 10px;
   border-radius: 10%;
   margin-top: 10px;
-  background-color: #FBAB7E;
-  background-image: linear-gradient(353deg, #FBAB7E 0%, #F7CE68 100%);
+  background-color: rgb(126, 251, 199);
+  background-image: linear-gradient(353deg, rgb(126, 247, 251) 0%, rgb(104, 154, 247) 100%);
   
  }
  .submit-button:hover{
-  background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+  background-image: linear-gradient(147deg,  rgb(86, 245, 237) 0%, rgb(37, 255, 153) 74%);
   transform: scale(0.8);
  }
  .radio-section {
@@ -107,6 +107,6 @@ code {
  .red {
   padding: 5px;
   width: 100%;
-  background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+  background-image: linear-gradient(147deg, rgb(86, 245, 237) 0%, rgb(37, 255, 153) 74%);
   background-repeat: no-repeat;
  }
