@@ -1,6 +1,7 @@
 import React from "react"
 
-export const Name = ({name, setName}) => {
+
+export const Name = ({name, setName,}) => {
     return (
         <label className="name-label">
         <h2>Name:</h2>
@@ -10,6 +11,6 @@ export const Name = ({name, setName}) => {
             onChange={event => setName (event.target.value)}
             required
           />
-        </label>
-    )
+        </label> 
+    ) 
 }

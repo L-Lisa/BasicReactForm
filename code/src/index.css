@@ -21,6 +21,7 @@ code {
 
 .form-div {
   width: 100%;
+  height: 100vh;
   padding: 20px;
   background-color: #FFF;
   display: flex;
@@ -28,11 +29,13 @@ code {
   align-items: center;
   
 }
+.section {
+  height: 90vh;
+}
  h1 {
    font-family: 'Sen', sans-serif;
-   
    text-align: center;
-   margin: 30px 30px;
+   margin: 10px 30px;
    letter-spacing: 0.4em;
    font-size: x-large;
  }
@@ -43,7 +46,7 @@ code {
    margin: 0 auto;
  }
  h2 {
-   padding-top: 2em;
+   padding-top: 1em;
    font-size: 1em;
    font-weight: lighter;
  }
@@ -82,13 +85,15 @@ code {
   margin: 7px;
   padding: 10px;
   border-radius: 10%;
+  box-shadow: black ;
   margin-top: 10px;
+  transition: box-shadow .1s;
   background-color: rgb(126, 251, 199);
   background-image: linear-gradient(353deg, rgb(126, 247, 251) 0%, rgb(104, 154, 247) 100%);
   
  }
  .submit-button:hover{
-  background-image: linear-gradient(147deg,  rgb(86, 245, 237) 0%, rgb(37, 255, 153) 74%);
+  box-shadow: 0 0 20px rgba(33,33,33,.4); 
   transform: scale(0.8);
  }
  .radio-section {
@@ -103,11 +108,10 @@ code {
  }
  .blue {
   background-image: linear-gradient(147deg, rgb(86, 245, 237) 0%, rgb(37, 255, 153) 74%);
-  
  }
- .red {
-  padding: 5px;
-  width: 100%;
-  background-image: linear-gradient(147deg, rgb(86, 245, 237) 0%, rgb(37, 255, 153) 74%);
-  background-repeat: no-repeat;
+ input {
+   height: 40px;
+ }
+ select {
+   height: 40px;
  }

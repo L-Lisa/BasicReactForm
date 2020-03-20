@@ -12,6 +12,7 @@ const [destination, setDestination] = useState(" ");
 const [stay, setStay] = useState(" ");
 const stayLength =["   1 week", "   3 weeks", "   12 weeks"];
 const [showSummary, setShowSummary] = useState(false);
+const [section, setSection] = useState ("firstQuestion");
 
 const handleSubmit = event => {
   event.preventDefault();
@@ -24,18 +25,40 @@ const handleSubmit = event => {
   {!showSummary ? (
   
    <form onSubmit={handleSubmit}>
-     <section>
-      <h1>TRAVEL MADE EASY</h1>
-       <p className="intro-txt">Tell us where you would like to go and we will take care of the rest.</p>
-    </section>
+     {section === "firstQuestion" && (
+      <div className="section">
+       
+        <h1>TRAVEL MADE EASY</h1>
+        <p className="intro-txt">Tell us where you would like to go and we will take care of the rest.</p>
+        <Name name={name} setName={setName} section={section} setSection={setSection} />
 
-       <Name name={name} setName={setName}/>
+        <button className="submit-button" type="submit"  disabled={name === ""}  
+        onClick={event => setSection ("destination")}
+        >Submit</button>
+      </div>
+       )}
 
+    {section === "destination" && (
+      <div className="section">
       <Destination destination={destination}setDestination={setDestination}/>
- 
+      <button type="submit"  disabled= {destination === " "}  
+       onClick={event => setSection ("stay")} className="submit-button"
+      >Submit</button>
+      </div>
+    )}
+    {section === "stay" && (
+      <div className="section">
       <Stay stay={stay} setStay={setStay} stayLength={stayLength}/>
-
-      <button type="submit" className="submit-button"disabled={name === "" || destination=== "" || stay === ""}>Submit</button>
+      <button type="submit" className="submit-button" disabled={stay === " "}  
+       onClick={event => setSection ("submit")}
+      >Submit</button>
+      </div>
+      )}
+    {section === "submit" && (
+      <div className="section">
+      <button type="submit" className="submit-button" disabled={name === "" || destination=== "" || stay === ""}>Get travel plan!</button>
+      </div>
+      )}
       </form>
 
          ) : (
