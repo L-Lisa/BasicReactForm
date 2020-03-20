@@ -9,7 +9,6 @@ export const Stay = ({stay, setStay, stayLength})=> {
            <label key={length} className="radio-label">
            <input className="radio-input"
              type="radio"
-             required 
              value={length}
              onChange={event => setStay(event.target.value)}
              checked = {stay === length}
