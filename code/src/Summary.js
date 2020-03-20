@@ -8,3 +8,4 @@ export const Summary = ({name, destination,stay}) => {
    </div>
    )
 }
+
