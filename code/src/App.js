@@ -5,6 +5,7 @@ import { Summary } from 'Summary.js';
 import { Name} from 'Name';
 import { Destination } from 'Destination.js';
 import {Stay} from 'Stay';
+import {Progress} from 'Progress';
 
 export const App = () => {
 const [name, setName] = useState("");
@@ -13,6 +14,7 @@ const [stay, setStay] = useState(" ");
 const stayLength =["   1 week", "   3 weeks", "   12 weeks"];
 const [showSummary, setShowSummary] = useState(false);
 const [section, setSection] = useState ("firstQuestion");
+const [progress, setProgress] = useState(35);
 
 const handleSubmit = event => {
   event.preventDefault();
@@ -33,45 +35,45 @@ const handleSubmit = event => {
         <Name name={name} setName={setName} section={section} setSection={setSection} />
 
         <button className="submit-button" type="submit"  disabled={name === ""}  
-        onClick={event => setSection ("destination")}
+          onClick={event => setSection ("destination")}onClick={() => setProgress(progress + 1)}
         >Submit</button>
+        <Progress percentage={progress} />
       </div>
        )}
 
     {section === "destination" && (
       <div className="section">
-      <Destination destination={destination}setDestination={setDestination}/>
-      <button type="submit"  disabled= {destination === " "}  
-       onClick={event => setSection ("stay")} className="submit-button"
-      >Submit</button>
+        <Destination destination={destination}setDestination={setDestination}/>
+        <button type="submit"  disabled= {destination === " "}  
+        onClick={event => setSection ("stay")} className="submit-button"
+        >Submit</button>
       </div>
     )}
     {section === "stay" && (
       <div className="section">
-      <Stay stay={stay} setStay={setStay} stayLength={stayLength}/>
-      <button type="submit" className="submit-button" disabled={stay === " "}  
-       onClick={event => setSection ("submit")}
-      >Submit</button>
+        <Stay stay={stay} setStay={setStay} stayLength={stayLength}/>
+        <button type="submit" className="submit-button" disabled={stay === " "}  
+        onClick={event => setSection ("submit")}
+        >Submit</button>
       </div>
       )}
     {section === "submit" && (
       <div className="section">
-      <button type="submit" className="submit-button" disabled={name === "" || destination=== "" || stay === ""}>Get travel plan!</button>
+        <button type="submit" className="submit-button" disabled={name === "" || destination=== "" || stay === ""}>Get travel plan!</button>
       </div>
       )}
       </form>
 
          ) : (
 
-           <>
+      <>
          <Summary name= {name} destination={destination}stay={stay}/>
          <footer>
-         <FooterImage yourimage={beachfooter}/>
+           <FooterImage yourimage={beachfooter}/>
          </footer>
-        </>
-          )}
-    </div>
- 
+      </>
+      )}
+  </div> 
   )
 }
 

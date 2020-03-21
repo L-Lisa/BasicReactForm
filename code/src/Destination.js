@@ -8,14 +8,13 @@ export const Destination = ({destination, setDestination}) => {
             onChange= {event => setDestination(event.target.value)}
             value={destination} 
             required
-            >
+          >
               <option value= "">Select Destination</option>
               <option value= "borabora">Bora-bora</option>
               <option value= "maldives">Maldives</option>
               <option value= "caribbean">Caribbean</option>
               <option value= "india">India</option>
-              
-              </select>
+          </select>
         </label>
     )
 }
