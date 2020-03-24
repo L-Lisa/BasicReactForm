@@ -5,7 +5,7 @@ import { Summary } from 'Summary.js';
 import { Name} from 'Name';
 import { Destination } from 'Destination.js';
 import {Stay} from 'Stay';
-import {Progress} from 'Progress';
+
 
 export const App = () => {
 const [name, setName] = useState("");
@@ -14,7 +14,7 @@ const [stay, setStay] = useState(" ");
 const stayLength =["   1 week", "   3 weeks", "   12 weeks"];
 const [showSummary, setShowSummary] = useState(false);
 const [section, setSection] = useState ("firstQuestion");
-const [progress, setProgress] = useState(35);
+
 
 const handleSubmit = event => {
   event.preventDefault();
@@ -31,13 +31,13 @@ const handleSubmit = event => {
       <div className="section">
        
         <h1>TRAVEL MADE EASY</h1>
-        <p className="intro-txt">Tell us where you would like to go and we will take care of the rest.</p>
+        <p className="intro-txt">Tell us where you would like to go, answer 3 questions and let us take care of the rest.</p>
         <Name name={name} setName={setName} section={section} setSection={setSection} />
 
         <button className="submit-button" type="submit"  disabled={name === ""}  
-          onClick={event => setSection ("destination")}onClick={() => setProgress(progress + 1)}
+          onClick={event => setSection ("destination")}
         >Submit</button>
-        <Progress percentage={progress} />
+       
       </div>
        )}
 
